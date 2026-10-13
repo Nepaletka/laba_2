@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 #include <math.h>
 
 double equation_value(double decay_time, double *radioactivity, double *time, int N) {

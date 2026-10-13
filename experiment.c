@@ -17,13 +17,13 @@ int experiment(double *radioactivity, double *time, double start_time, double en
 {
     const double R0 = 1.0;
     const double beta = 10.0;
-    double t = start_time;
+    int N = 0;
 
-    for (int N = 0;; t <= end_time + (step / 10) && N < 100; N++)
+    for (double t = start_time; t <= end_time + (step / 10) && N < 100; t += step)
     {
-        t += step;
         radioactivity[N] = R0 * exp(- t / beta);
         time[N] = t;
+        N++;
     }
 
     return N;
