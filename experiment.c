@@ -7,7 +7,7 @@ void add_noise(double *radioactivity, int N)
 
     for(int i = 0; i < N; i++)
     {
-        radioactivity[i] += amplitude * (rand() / (double) RAND_MAX - 0.5);
+        radioactivity[i] += amplitude * (rand() / (double) RAND_MAX * 2 - 1);
     }
 
     return;
