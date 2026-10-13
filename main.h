@@ -1,0 +1,7 @@
+#pragma once
+
+int experiment(double *radioactivity, double *time, double start_time, double end_time, double step);
+void add_noise (double *radioactivity, int N);
+double nonlinear_equation (double *radioactivity, double *time, int N, double precision);
+double model(double *radioactivity, double *time, int N, double point);
+double linear_equation (double *radioactivity, double *time, int N);
