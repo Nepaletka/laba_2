@@ -7,6 +7,7 @@ int main()
 {
     srand(time(NULL));
 
+    //1 stage
     double start_time, end_time, step, precision;
     scanf("%lf %lf %lf %lf", &start_time, &end_time, &step, &precision);
 
@@ -21,5 +22,17 @@ int main()
     }
 
     add_noise((double *)&radioactivity, N);
+
+    //2 stage
+    double decay_time, decay_rate;
+
+    decay_time = nonlinear_equation((double *)&radioactivity, (double *)&time, N, precision);
+    decay_rate = linear_equation((double *)&radioactivity, (double *)&time, N);
+
+    //3 stage
+    double time_differences;
+
+    time_differences = precision_analysis(radioactivity, (double *)&time, N, precision);
+    printf("%lf %lf %lf\n", decay_time, decay_rate, time_differences);
     return 0;
 }

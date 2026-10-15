@@ -16,7 +16,7 @@ void add_noise(double *radioactivity, int N)
 int experiment(double *radioactivity, double *time, double start_time, double end_time, double step)
 {
     const double R0 = 1.0;
-    const double beta = 10.0;
+    const double beta = 3.5;
     int N = 0;
 
     for (double t = start_time; t <= end_time + (step / 10) && N < 100; t += step)
