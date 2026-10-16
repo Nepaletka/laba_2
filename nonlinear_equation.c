@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include "main.h"
 
 double model(double decay_time, double *radioactivity, double *time, int N) {
     double sum = 0.0;
@@ -10,10 +11,7 @@ double model(double decay_time, double *radioactivity, double *time, int N) {
     return sum;
 }
 
-double nonlinear_equation(double *radioactivity, double *time, int N, double precision) {
-    double interval1, interval2;
-    scanf("%lf %lf", &interval1, &interval2);
-
+double nonlinear_equation(double *radioactivity, double *time, int N, double precision, double interval1, double interval2) {
     double a = interval1, b = interval2;
     double fa = model(a, radioactivity, time, N);
 

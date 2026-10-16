@@ -1,3 +1,4 @@
+#include "main.h"
 #include <math.h>
 #include <stdlib.h>
 
@@ -13,10 +14,10 @@ void add_noise(double *radioactivity, int N)
     return;
 }
 
-int experiment(double *radioactivity, double *time, double start_time, double end_time, double step)
+int experiment(double *radioactivity, double *time, double start_time, double end_time, double step, double beta)
 {
     const double R0 = 1.0;
-    const double beta = 3.5;
+
     int N = 0;
 
     for (double t = start_time; t <= end_time + (step / 10) && N < 100; t += step)
